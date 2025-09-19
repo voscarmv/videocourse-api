@@ -1,0 +1,33 @@
+{
+  "name": "vercel_serverless",
+  "version": "1.0.0",
+  "description": "Template for Vercel Serverless Express server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "NODE_ENV=$VERCEL_ENV npx knex migrate:latest",
+    "migrate": "NODE_ENV=$VERCEL_ENV npx knex migrate:latest",
+    "migrate:rollback": "NODE_ENV=$VERCEL_ENV npx knex migrate:rollback"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voscarmv/vercel_serverless.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/voscarmv/vercel_serverless/issues"
+  },
+  "homepage": "https://github.com/voscarmv/vercel_serverless#readme",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "hashids": "^2.3.0",
+    "knex": "^3.1.0",
+    "pg": "^8.16.3"
+  }
+}
