@@ -34,7 +34,7 @@ const salt = process.env.salt;
         }
     )
     console.log(r2.data);
-    const accesskey = r2.data.update[0].key;
+    const accesskey = r2.data.key;
     const r3 = await axios.post(
         'http://localhost:3000/section',
         {
