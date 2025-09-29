@@ -1,9 +1,7 @@
 const axios = require('axios');
 const dotenv = require('dotenv');
-const Hashids = require('hashids/cjs');
 dotenv.config();
 const key = process.env.key;
-const salt = process.env.salt;
 
 (async () => {
     const id = 'ai_course';
@@ -11,7 +9,8 @@ const salt = process.env.salt;
         "https://videocourse-api.vercel.app/content",
         {
             id,
-            name: 'AI Course'
+            name: 'AI Course',
+            description: '# Title'
         },
         {
             headers: {
@@ -40,7 +39,9 @@ const salt = process.env.salt;
         {
             content_id: id,
             id: 'lesson_1',
-            name: 'Lesson #1'
+            name: 'Lesson #1',
+            markdown: '## Lesson 1',
+            vidurl: 'https://www.youtube.com/watch?v=2cXJXacMT7o'
         },
         {
             headers: {
@@ -54,7 +55,9 @@ const salt = process.env.salt;
         {
             content_id: id,
             id: 'lesson_2',
-            name: 'Lesson #2'
+            name: 'Lesson #2',
+            markdown: '## Lesson 2',
+            vidurl: 'https://www.youtube.com/watch?v=2cXJXacMT7o'
         },
         {
             headers: {
@@ -73,28 +76,4 @@ const salt = process.env.salt;
         }
     )
     console.log(r5.data);
-    // const r2 = await axios.get(
-    //     "http://localhost:3000/content",
-    //     {
-    //         headers: {
-    //             'Authorization': `Bearer ${key}`,
-    //             'Content-Type': 'application/json',
-    //         }
-    //     }
-    // );
-    // console.log(r2.data);
-    // const hashids = new Hashids(salt, 5, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890');
-    // const id = 1;
-    // const code = hashids.encode(id);
-    // console.log(code);
-    // const r3 = await axios.get(
-    //     `http://localhost:3000/content/${id}`,
-    //     {
-    //         headers: {
-    //             'Authorization': `Bearer ${code}`,
-    //             'Content-Type': 'application/json',
-    //         }
-    //     }
-    // );
-    // console.log(r3.data);
 })();
