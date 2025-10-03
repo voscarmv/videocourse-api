@@ -11,7 +11,7 @@ async function readContent(id){
     return await pg('content').where({id});
 }
 async function readAllContent(){
-    return await pg('contet');
+    return await pg('content');
 }
 async function updateContent(id, data){
     return await pg('content').where({id}).update(data);

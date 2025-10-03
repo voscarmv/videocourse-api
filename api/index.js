@@ -28,7 +28,7 @@ app.post('/content', auth.keyVerify, async (req, res) => {
 });
 app.get('/content', async (req, res) => {
   const data = await db.readAllContent();
-  res.json({message: 'READ all content', contents: data});
+  res.json({message: 'GET all content', contents: data});
 });
 app.get('/content/:id', auth.hashVerify, async (req, res) => {
   const id = req.params.id
