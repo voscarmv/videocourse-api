@@ -10,6 +10,9 @@ async function createContent(data){
 async function readContent(id){
     return await pg('content').where({id});
 }
+async function readAllContent(){
+    return await pg('contet');
+}
 async function updateContent(id, data){
     return await pg('content').where({id}).update(data);
 }
@@ -46,6 +49,7 @@ async function deleteAccesKey(key){
 module.exports = {
     createContent,
     readContent,
+    readAllContent,
     updateContent,
     deleteContent,
     createSection,
