@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 const port = process.env.port || 3000;
 
-app.use(cors({
+/*app.use(cors({
   // origin: ['http://localhost:5173'],
   // origin: [frontend_origin],
   // origin: [], // Accept all origins
@@ -18,8 +18,8 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
-}));
-// app.use(cors());
+}));*/
+app.use(cors());
 app.use(express.json());
 
 app.post('/content', auth.keyVerify, async (req, res) => {
