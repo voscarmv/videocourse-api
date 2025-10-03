@@ -26,7 +26,7 @@ app.post('/content', auth.keyVerify, async (req, res) => {
   const data = await db.createContent(req.body);
   res.json({ message: 'POST new content', data });
 });
-app.get('/content', auth.keyVerify, async (req, res) => {
+app.get('/content', async (req, res) => {
   const data = await db.readAllContent();
   res.json({message: 'READ all content', contents: data});
 })
