@@ -24,7 +24,7 @@ async function createSection(data){
     return await pg('section').insert(data);
 }
 async function readSection(content_id){
-    return await pg('section').where({content_id});
+    return await pg('section').where({content_id}).orderBy('created_at');
 }
 async function updateSection(id, data){
     return await pg('section').where({id}).update(data);
