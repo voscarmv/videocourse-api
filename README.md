@@ -1,2 +1,2 @@
-# vercel_serverless
-Template for Vercel Serverless Express server
+# Videocourse API
+API for the videocourse platform
